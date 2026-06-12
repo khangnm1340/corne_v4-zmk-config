@@ -16,23 +16,34 @@
 #define FN 5
 
 / {
+        behaviors {
+                hmt: homerow_mod_tap {
+                        compatible = "zmk,behavior-hold-tap";
+                        #binding-cells = <2>;
+                        flavor = "tap-preferred";
+                        tapping-term-ms = <200>;
+                        quick-tap-ms = <150>;
+                        bindings = <&kp>, <&kp>;
+                };
+        };
+
         keymap {
                 compatible = "zmk,keymap";
 
                 default_layer {
                         bindings = <
-   &kp TAB   &kp Q &kp W &kp E &kp R       &kp T   &kp Y &kp U  &kp I    &kp O     &kp P         &mo FN
-   &kp ESC   &kp A &kp S &kp D &mt LSHFT F &kp G   &kp H &kp J  &kp K    &kp L     &mt RSHFT SEMI &kp SQT
-   &kp LSHFT &kp Z &kp X &kp C &kp V       &kp B   &kp N &kp M  &kp BSPC &kp COMMA &kp DOT       &mo BT
+   &kp TAB   &kp Q &kp W &kp E &kp R        &kp T   &kp Y &kp U  &kp I    &kp O     &kp P          &mo FN
+   &kp ESC   &kp A &kp S &kp D &hmt LSHFT F &kp G   &kp H &kp J  &kp K    &kp L     &hmt RSHFT SEMI &kp SQT
+   &kp LSHFT &kp Z &kp X &kp C &kp V        &kp B   &kp N &kp M  &kp BSPC &kp COMMA &kp DOT        &mo BT
                          &kp LALT &mo NAV &kp SPACE   &kp RET &mo NUM &kp RCTRL
                         >;
                 };
 
                 gallium_layer {
                         bindings = <
-   &kp TAB   &kp B &kp L &kp D &kp C       &kp V   &kp J &kp F &kp O    &kp U     &kp SEMI      &mo FN
-   &kp ESC   &kp N &kp R &kp T &mt LSHFT S &kp G   &kp Y &kp H &kp A    &kp E     &mt RSHFT I   &kp SQT
-   &kp LSHFT &kp X &kp Q &kp M &kp W       &kp Z   &kp K &kp P &kp BSPC &kp COMMA &kp DOT       &mo BT
+   &kp TAB   &kp B &kp L &kp D &kp C        &kp V   &kp J &kp F &kp O    &kp U     &kp SEMI       &mo FN
+   &kp ESC   &kp N &kp R &kp T &hmt LSHFT S &kp G   &kp Y &kp H &kp A    &kp E     &hmt RSHFT I   &kp SQT
+   &kp LSHFT &kp X &kp Q &kp M &kp W        &kp Z   &kp K &kp P &kp BSPC &kp COMMA &kp DOT        &mo BT
                          &kp LALT &mo NAV &kp SPACE   &kp RET &mo NUM &kp RCTRL
                         >;
                 };
@@ -48,10 +59,10 @@
 
                 nav_layer {
                         bindings = <
-   &trans &trans &trans &trans   &trans  &trans   &kp LC(X) &kp LC(C) &kp LC(V) &to BASE  &to GALLIUM &trans
-   &trans &trans &trans &kp HOME &kp END &trans   &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT &kp RSHFT   &trans
-   &trans &trans &trans &trans   &trans  &trans   &kp LC(Y) &kp LC(Z) &kp BSPC  &kp RGUI  &kp RALT    &trans
-                           &kp LALT &trans &kp SPACE   &kp RET &kp RSHFT &kp RCTRL
+   &trans &trans &trans &kp LC(C) &kp LC(V) &kp LC(X)   &trans   &trans   &trans  &to BASE  &to GALLIUM &trans
+   &trans &trans &trans &kp HOME  &kp END   &kp LC(Z)   &kp LEFT &kp DOWN &kp UP  &kp RIGHT &kp RS(RCTRL) &trans
+   &trans &trans &trans &trans    &trans    &kp LC(Y)   &trans   &trans   &kp BSPC &trans   &trans       &trans
+                         &kp LALT &trans &trans          &trans   &kp RCTRL &kp RGUI
                         >;
                 };
 
@@ -66,10 +77,10 @@
 
                 fn_layer {
                         bindings = <
-   &trans &trans &kp F4 &kp F5 &kp F6 &trans   &trans &trans &trans &trans &trans &trans
-   &trans &trans &kp F1 &kp F2 &kp F3 &trans   &trans &trans &trans &trans &trans &trans
-   &trans &trans &kp F7 &kp F8 &kp F9 &trans   &trans &trans &trans &trans &trans &trans
-                         &trans &trans &trans   &trans &trans &trans
+   &kp F1    &kp F2    &kp F3    &kp F4    &kp F5    &kp F6      &kp C_MUTE &kp C_VOL_UP &kp C_VOL_DN &kp C_BRI_UP &kp C_BRI_DN &trans
+   &kp F7    &kp F8    &kp F9    &kp F10   &kp F11   &kp F12     &trans     &trans       &trans       &trans       &trans       &trans
+   &trans    &trans    &trans    &trans    &trans    &trans      &trans     &trans       &trans       &trans       &trans       &trans
+                                  &trans    &trans    &trans      &trans     &trans       &trans
                         >;
                 };
         };
