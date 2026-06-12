@@ -21,18 +21,18 @@
 
                 default_layer {
                         bindings = <
-   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I    &kp O     &kp P    &mo FN
-   &kp ESC   &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K    &kp L     &kp SEMI &kp SQT
-   &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp BSPC &kp COMMA &kp DOT  &mo BT
+   &kp TAB   &kp Q &kp W &kp E &kp R       &kp T   &kp Y &kp U  &kp I    &kp O     &kp P         &mo FN
+   &kp ESC   &kp A &kp S &kp D &mt LSHFT F &kp G   &kp H &kp J  &kp K    &kp L     &mt RSHFT SEMI &kp SQT
+   &kp LSHFT &kp Z &kp X &kp C &kp V       &kp B   &kp N &kp M  &kp BSPC &kp COMMA &kp DOT       &mo BT
                          &kp LALT &mo NAV &kp SPACE   &kp RET &mo NUM &kp RCTRL
                         >;
                 };
 
                 gallium_layer {
                         bindings = <
-   &kp TAB   &kp B &kp L &kp D &kp C &kp V   &kp J &kp F &kp O    &kp U     &kp SEMI &mo FN
-   &kp ESC   &kp N &kp R &kp T &kp S &kp G   &kp Y &kp H &kp A    &kp E     &kp I    &kp SQT
-   &kp LSHFT &kp X &kp Q &kp M &kp W &kp Z   &kp K &kp P &kp BSPC &kp COMMA &kp DOT  &mo BT
+   &kp TAB   &kp B &kp L &kp D &kp C       &kp V   &kp J &kp F &kp O    &kp U     &kp SEMI      &mo FN
+   &kp ESC   &kp N &kp R &kp T &mt LSHFT S &kp G   &kp Y &kp H &kp A    &kp E     &mt RSHFT I   &kp SQT
+   &kp LSHFT &kp X &kp Q &kp M &kp W       &kp Z   &kp K &kp P &kp BSPC &kp COMMA &kp DOT       &mo BT
                          &kp LALT &mo NAV &kp SPACE   &kp RET &mo NUM &kp RCTRL
                         >;
                 };
@@ -50,8 +50,8 @@
                         bindings = <
    &trans &trans &trans &trans   &trans  &trans   &kp LC(X) &kp LC(C) &kp LC(V) &to BASE  &to GALLIUM &trans
    &trans &trans &trans &kp HOME &kp END &trans   &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT &kp RSHFT   &trans
-   &trans &trans &trans &trans   &trans  &trans   &kp LC(Y) &kp LC(Z) &kp BSPC  &trans    &trans      &trans
-                           &kp LALT &trans &kp SPACE   &kp RET &kp RSHFT &kp RGUI
+   &trans &trans &trans &trans   &trans  &trans   &kp LC(Y) &kp LC(Z) &kp BSPC  &kp RGUI  &kp RALT    &trans
+                           &kp LALT &trans &kp SPACE   &kp RET &kp RSHFT &kp RCTRL
                         >;
                 };
 
