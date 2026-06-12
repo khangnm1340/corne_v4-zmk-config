@@ -1,0 +1,76 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+
+#define BASE 0
+#define GALLIUM 1
+#define NUM 2
+#define NAV 3
+#define BT 4
+#define FN 5
+
+/ {
+        keymap {
+                compatible = "zmk,keymap";
+
+                default_layer {
+                        bindings = <
+   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I    &kp O     &kp P    &mo FN
+   &kp ESC   &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K    &kp L     &kp SEMI &kp SQT
+   &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp BSPC &kp COMMA &kp DOT  &mo BT
+                         &kp LALT &mo NAV &kp SPACE   &kp RET &mo NUM &kp RCTRL
+                        >;
+                };
+
+                gallium_layer {
+                        bindings = <
+   &kp TAB   &kp B &kp L &kp D &kp C &kp V   &kp J &kp F &kp O    &kp U     &kp SEMI &mo FN
+   &kp ESC   &kp N &kp R &kp T &kp S &kp G   &kp Y &kp H &kp A    &kp E     &kp I    &kp SQT
+   &kp LSHFT &kp X &kp Q &kp M &kp W &kp Z   &kp K &kp P &kp BSPC &kp COMMA &kp DOT  &mo BT
+                         &kp LALT &mo NAV &kp SPACE   &kp RET &mo NUM &kp RCTRL
+                        >;
+                };
+
+                number_symbol_layer {
+                        bindings = <
+   &trans &kp N1 &kp N2    &kp N3   &kp N4    &kp N5      &kp N6   &kp N7   &kp N8   &kp N9       &trans &trans
+   &trans &kp LT &kp GT    &kp LBKT &kp RBKT  &kp N0      &kp BSLH &kp FSLH &kp LPAR &kp RPAR     &trans &trans
+   &trans &trans &kp GRAVE &kp PLUS &kp MINUS &kp EQUAL   &kp EXCL &kp AT   &kp BSPC &kp CAPSLOCK &trans &trans
+                              &kp LALT &kp LSHFT &kp SPACE   &kp RET &trans &kp RCTRL
+                        >;
+                };
+
+                nav_layer {
+                        bindings = <
+   &trans &trans &trans &trans   &trans  &trans   &kp LC(X) &kp LC(C) &kp LC(V) &to BASE  &to GALLIUM &trans
+   &trans &trans &trans &kp HOME &kp END &trans   &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT &kp RSHFT   &trans
+   &trans &trans &trans &trans   &trans  &trans   &kp LC(Y) &kp LC(Z) &kp BSPC  &trans    &trans      &trans
+                           &kp LALT &trans &kp SPACE   &kp RET &kp RSHFT &kp RGUI
+                        >;
+                };
+
+                bluetooth_layer {
+                        bindings = <
+   &trans     &trans       &trans       &trans       &trans       &trans       &trans &trans &trans &trans &trans &trans
+   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &trans &trans &trans &trans &trans &trans
+   &trans     &trans       &trans       &trans       &trans       &trans       &trans &trans &trans &trans &trans &trans
+                                      &trans &trans &trans   &trans &trans &trans
+                        >;
+                };
+
+                fn_layer {
+                        bindings = <
+   &trans &trans &kp F4 &kp F5 &kp F6 &trans   &trans &trans &trans &trans &trans &trans
+   &trans &trans &kp F1 &kp F2 &kp F3 &trans   &trans &trans &trans &trans &trans &trans
+   &trans &trans &kp F7 &kp F8 &kp F9 &trans   &trans &trans &trans &trans &trans &trans
+                         &trans &trans &trans   &trans &trans &trans
+                        >;
+                };
+        };
+};
