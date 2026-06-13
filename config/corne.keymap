@@ -60,7 +60,7 @@
 
                 nav_layer {
                         bindings = <
-   &trans &trans &kp LC(A)  &kp LC(C) &kp LC(V) &kp LC(X)       &mkp LCLK   &trans   &trans  &to BASE  &to GALLIUM &trans
+   &trans &trans &kp LC(A)  &kp LC(C) &kp LC(V) &kp LC(X)       &trans   &mkp LCLK   &trans  &to BASE  &to GALLIUM &trans
    &trans &trans &trans     &kp HOME  &kp END   &kp LC(Z)       &kp LEFT &kp DOWN &kp UP  &kp RIGHT &kp RS(RCTRL) &trans
    &trans &trans &trans     &trans    &trans    &kp LC(LS(Z))   &trans   &trans   &kp BSPC &trans   &kp RS(RCTRL) &trans
                          &kp LALT &trans &trans                 &trans   &kp RCTRL &kp RGUI
