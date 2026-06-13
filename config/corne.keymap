@@ -33,8 +33,8 @@
                 default_layer {
                         bindings = <
    &kp TAB   &kp Q &kp W &kp E &kp R        &kp T   &kp Y &kp U  &kp I    &kp O     &kp P          &mo FN
-   &kp ESC   &kp A &kp S &kp D &hmt LSHFT F &kp G   &kp H &kp J  &kp K    &kp L     &hmt RSHFT SEMI &kp SQT
-   &kp LSHFT &kp Z &kp X &kp C &kp V        &kp B   &kp N &kp M  &kp BSPC &kp COMMA &kp DOT        &mo BT
+   &kp ESC   &kp A &kp S &kp D &hmt LSHFT F &kp G   &kp H &kp J  &kp K    &kp L     &hmt RSHFT SQT &kp SEMI
+   &kp LSHFT &kp Z &kp X &kp C &kp V        &kp B   &kp N &kp M  &kp BSPC &kp COMMA &hmt RSHFT DOT        &mo BT
                          &kp LALT &mo NAV &kp SPACE   &kp RET &mo NUM &kp RCTRL
                         >;
                 };
@@ -51,17 +51,17 @@
                 number_symbol_layer {
                         bindings = <
    &trans &kp N1 &kp N2    &kp N3   &kp N4    &kp N5      &kp N6   &kp N7   &kp N8   &kp N9       &trans &trans
-   &trans &kp LT &kp GT    &kp LBKT &kp RBKT  &kp N0      &kp BSLH &kp FSLH &kp LPAR &kp RPAR     &trans &trans
-   &trans &trans &kp GRAVE &kp PLUS &kp MINUS &kp EQUAL   &kp EXCL &kp AT   &kp BSPC &kp CAPSLOCK &trans &trans
+   &trans &kp LT &kp GT    &kp LBKT &kp RBKT  &kp N0      &kp BSLH &kp FSLH &kp LPAR &kp RPAR     &kp LSHFT &trans
+   &trans &trans &kp GRAVE &kp PLUS &kp MINUS &kp EQUAL   &kp EXCL &kp AT   &kp BSPC &trans &kp LSHFT &kp CAPSLOCK
                               &kp LCTRL &kp LSHFT &kp SPACE   &kp RET &trans &trans
                         >;
                 };
 
                 nav_layer {
                         bindings = <
-   &trans &trans &kp LC(A)  &kp LC(C) &kp LC(V) &kp LC(X)       &trans   &trans   &trans  &to BASE  &to GALLIUM &trans
+   &trans &trans &kp LC(A)  &kp LC(C) &kp LC(V) &kp LC(X)       &mkp LCLK   &trans   &trans  &to BASE  &to GALLIUM &trans
    &trans &trans &trans     &kp HOME  &kp END   &kp LC(Z)       &kp LEFT &kp DOWN &kp UP  &kp RIGHT &kp RS(RCTRL) &trans
-   &trans &trans &trans     &trans    &trans    &kp LC(LS(Z))   &trans   &trans   &kp BSPC &trans   &trans       &trans
+   &trans &trans &trans     &trans    &trans    &kp LC(LS(Z))   &trans   &trans   &kp BSPC &trans   &kp RS(RCTRL) &trans
                          &kp LALT &trans &trans                 &trans   &kp RCTRL &kp RGUI
                         >;
                 };
