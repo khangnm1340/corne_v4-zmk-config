@@ -15,6 +15,7 @@
 #define NAV 3
 #define BT 4
 #define FN 5
+#define MOUSE 6
 
 / {
         behaviors {
@@ -25,6 +26,14 @@
                         tapping-term-ms = <200>;
                         quick-tap-ms = <150>;
                         bindings = <&kp>, <&kp>;
+                };
+                mlt: mouse_layer_tap {
+                        compatible = "zmk,behavior-hold-tap";
+                        #binding-cells = <2>;
+                        flavor = "tap-preferred";
+                        tapping-term-ms = <200>;
+                        quick-tap-ms = <150>;
+                        bindings = <&mo>, <&kp>;
                 };
         };
 
@@ -60,10 +69,19 @@
 
                 nav_layer {
                         bindings = <
-   &trans &trans &kp LC(A)  &kp LC(C) &kp LC(V) &kp LC(X)           &trans   &mkp LCLK   &msc SCRL_DOWN  &msc SCRL_UP  &trans &to GALLIUM
-   &trans &trans &trans     &kp HOME  &kp END   &kp LC(Z)           &kp LEFT &kp DOWN &kp UP  &kp RIGHT &kp RS(RCTRL) &trans
-   &trans &trans &trans     &mmv MOVE_LEFT   &mmv MOVE_RIGHT  &kp LC(LS(Z))   &mmv MOVE_UP   &mmv MOVE_DOWN   &kp BSPC &trans   &kp RS(RCTRL) &to BASE
+   &trans &trans &kp LC(A)  &kp LC(C) &kp LC(V) &kp LC(X)           &trans &mkp LCLK &msc SCRL_DOWN &msc SCRL_UP &trans &to GALLIUM
+   &trans &trans &trans     &kp HOME  &mlt MOUSE END   &kp LC(Z)           &kp LEFT &kp DOWN &kp UP &kp RIGHT &kp RS(RCTRL) &trans
+   &trans &trans &trans     &trans    &trans    &kp LC(LS(Z))       &trans &trans &kp BSPC &trans &kp RS(RCTRL) &to BASE
                          &kp LALT &trans &trans                 &trans   &kp RCTRL &kp RGUI
+                        >;
+                };
+
+                mouse_layer {
+                        bindings = <
+   &trans &trans &trans &trans &trans &trans      &trans &mkp LCLK &msc SCRL_DOWN &msc SCRL_UP &trans &trans
+   &trans &trans &trans &trans &trans &trans      &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT &trans &trans
+   &trans &trans &trans &trans &trans &trans      &trans &mkp RCLK &mkp MCLK &trans &trans &trans
+                         &trans &trans &trans     &trans &trans &trans
                         >;
                 };
 
