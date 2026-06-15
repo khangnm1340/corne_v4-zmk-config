@@ -19,6 +19,7 @@
 #define MOUSE 6
 
 / {
+
         behaviors {
                 hmt: homerow_mod_tap {
                         compatible = "zmk,behavior-hold-tap";
@@ -52,10 +53,10 @@
 
                 gallium_layer {
                         bindings = <
-   &kp TAB   &kp B &kp L &kp D &kp C        &kp V   &kp J &kp F &kp O    &kp U     &kp SEMI       &mo FN
-   &kp ESC   &kp N &kp R &kp T &hmt LSHFT S &kp G   &kp Y &kp H &kp A    &kp E     &hmt RSHFT I   &kp SQT
-   &kp LSHFT &kp X &kp Q &kp M &kp W        &kp Z   &kp K &kp P &kp BSPC &kp COMMA &kp DOT        &mo BT
-                         &kp LALT &mo NAV &kp SPACE   &kp RET &kp RCTRL &mo NUM 
+   &kp TAB   &kp B &kp L &kp D &kp C        &kp V   &kp J &kp Y &kp O    &kp U     &kp SEMI       &mo FN
+   &kp ESC   &kp N &kp R &kp T &hmt LSHFT S &kp G   &kp P &kp H &kp A    &kp E     &hmt RSHFT I   &kp SQT
+   &kp LSHFT &kp X &kp Q &kp M &kp W        &kp Z   &kp K &kp F &kp BSPC &kp COMMA &kp DOT        &mo BT
+                         &kp LALT &mo NAV &kp SPACE   &kp RET &mo NUM &kp RCTRL
                         >;
                 };
 
@@ -106,4 +107,9 @@
                         >;
                 };
         };
+};
+
+&mmv {
+    time-to-max-speed-ms = <150>;
+    acceleration-exponent = <2>;
 };
