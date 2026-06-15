@@ -63,7 +63,7 @@
                         bindings = <
    &trans &kp N1 &kp N2    &kp N3   &kp N4    &kp N5      &kp N6   &kp N7   &kp N8   &kp N9       &trans &trans
    &trans &kp LT &kp GT    &kp LBKT &hmt LSHFT RBKT  &kp N0      &kp SEMI &kp FSLH &kp LPAR &kp RPAR     &hmt RSHFT BSLH &trans
-   &trans &trans &kp GRAVE &kp PLUS &kp MINUS &kp EQUAL   &kp EXCL &kp AT   &kp RCTRL(BSPC) &kp COLON &kp LSHFT &kp CAPSLOCK
+   &trans &trans &kp GRAVE &kp PLUS &kp MINUS &kp EQUAL   &kp EXCL &kp AT   &kp HASH &kp COLON &kp LSHFT &kp CAPSLOCK
                               &kp LCTRL &kp LSHFT &kp SPACE   &kp RET &trans &trans
                         >;
                 };
